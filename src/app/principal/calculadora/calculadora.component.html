@@ -1,0 +1,53 @@
+<section class="container">
+  <!-- <form> -->
+  <!-- [formGroup]="registroForm"  (ngSubmit)="" -->
+  <h2>CALCULADORA</h2>
+  <div class="full">
+    <mat-form-field appearance="fill">
+      <mat-label>Ingrese un valor A</mat-label>
+      <input matInput [(ngModel)]="valorA" type="number" value="0">
+      <!-- <mat-error *ngIf="valorA?.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+  </div>
+  <div class="full">
+    <mat-form-field appearance="fill">
+      <mat-label>Ingrese un valor B</mat-label>
+      <input matInput [(ngModel)]="valorB" type="number" value="0">
+      <!-- <mat-error *ngIf="valorB?.invalid">{{getErrorMessage()}}</mat-error>  -->
+    </mat-form-field>
+  </div>
+  <!-- <p>{{valorA+valorB}}</p> -->
+  <!-- <mat-slide-toggle>Slide me!</mat-slide-toggle> -->
+
+  <div>
+    <mat-slide-toggle id="op" name="op" [(ngModel)]="sumar">SUMAR</mat-slide-toggle>
+  </div>
+  <div>
+    <mat-slide-toggle id="op" name="op" [(ngModel)]="restar">RESTAR</mat-slide-toggle>
+  </div>
+  <div>
+    <mat-slide-toggle id="op" name="op" [checked]="true" t [(ngModel)]="multiplicar">MULTIPLICAR</mat-slide-toggle>
+  </div>
+  <div>
+    <mat-slide-toggle id="op" name="op" [(ngModel)]="dividir">DIVIDIR</mat-slide-toggle>
+  </div>
+
+  <button mat-raised-button color="dark" (click)="Enviar()" class="full" id="btnCalcular">CALCULAR</button>
+
+  <div class="respuesta" *ngIf="respuestaNumero">La respuesta es: {{respuestaNumero}}</div>
+</section>
+<style>
+  .container {
+    margin-top: 3rem;
+    margin-inline: auto;
+    width: fit-content;
+  }
+
+  mat-slide-toggle {
+    margin-bottom: 1rem !important;
+  }
+
+  .respuesta {
+    margin-top: 1.2rem;
+  }
+</style>
